@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('includes/head')%>
+<body>
+        <%- include('includes/header') %>
+<main>
+        <h2><%= post.title %></h2>
+     <article><small>posted by <%=post.username %> on <%= new Date(post.createdate).getMonth()+1 %>/<%= new Date(post.createdate).getDate() %>/<%= new Date(post.createdate).getFullYear() %></small>
+        <div>
+        <%- stylish(post.content)%>
+     </div></article>
+     <a href="/edit-post/<%= post.id%>">Edit Post</a>
+     <a href="/delete-post/<%=post.id%>">Delete Post</a>
+</main>
+</body>
+</html>

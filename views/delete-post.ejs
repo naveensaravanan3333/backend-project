@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('includes/head') %>
+<body>
+<%- include('includes/header') %>
+
+<hr>
+    <main>
+        <form action="/delete-post/<%= post.id %>" method="POST"onsubmit="return confirm('Are you sure do you want to delete this post')">
+               <h2><%=post.title  %></h2>
+          <article>
+                posted by <%= post.username %>on<%= new Date(post.createdate).getMonth()+1%>/<%= new Date(post.createdate).getDate()%>/<%=new Date(post.createdate).getFullYear()%>
+        </article>
+          <button type="submit">Delete</button>
+    </form>
+    </main>
+<%- include('includes/footer') %>
+</body>
+</html>

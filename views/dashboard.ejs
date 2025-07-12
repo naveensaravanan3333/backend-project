@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('includes/head') %>
+<body>
+<%- include('includes/header') %>
+<hr>
+    <main>
+        <% if(posts.length==0){%>
+            <h4>You do not have any post</h4>
+        <%}else{%>
+            <h4>Hello,<%= user.username %></h4>
+        <%} %>
+        <% posts.forEach(post=>{%>
+            <article><a href="/post/<%= post.id %>"><%= post.title %></a> on <%= new Date(post.createdate).getMonth()+1 %>/<%= new Date(post.createdate).getDate() %>/<%= new Date(post.createdate).getFullYear() %>
+        </article>
+        <%}) %>
+    </main>
+<%- include('includes/footer') %>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('includes/head') %>
+<body>
+<%- include('includes/header') %>
+
+<hr>
+    <main>
+        <form action="/edit-post/<%= post.id %>" method="POST">
+          
+            <% errors.forEach(error => { %>
+                    <p class="notice"><%= error %></p>
+            <% }) %>
+        <fieldset>
+            <legend>Edit the post</legend>
+            <label for="title"><small>Title</small></label>
+            <input type="text"id="title"value="<%=  post.title %>"name="title"autocomplete="off">
+            
+            <label for="content"><small>Content</small></label>
+            <textarea name="content"id="content"autocomplete="off"><%= post.content %></textarea>
+            <br>
+            <button class="b0">Save the Edited Post</button>
+        </fieldset>
+    </form>
+    </main>
+<%- include('includes/footer') %>
+</body>
+</html>
